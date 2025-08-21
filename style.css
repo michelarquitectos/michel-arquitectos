@@ -177,6 +177,29 @@ nav ul li a:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Botón de descarga del portafolio */
+.portfolio-download {
+  text-align: center;
+  margin-top: 1rem;
+}
+.portfolio-download .download-image {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.portfolio-download .download-image:hover {
+  transform: scale(1.02);
+}
+.portfolio-download p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
 /* Contacto */
 .contact-form {
   background-color: #ffffff;
