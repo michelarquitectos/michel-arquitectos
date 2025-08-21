@@ -200,6 +200,14 @@ nav ul li a:hover {
   color: #444;
 }
 
+/* Logo en la sección hero */
+.hero-content .logo-hero {
+  width: 200px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
 /* Contacto */
 .contact-form {
   background-color: #ffffff;
