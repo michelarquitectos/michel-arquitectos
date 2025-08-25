@@ -42,6 +42,14 @@ nav .logo {
   color: #333;
 }
 
+/* Estilo para el pequeño logotipo en la navegación */
+nav .nav-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
 nav ul {
   list-style: none;
   display: flex;
