@@ -206,8 +206,12 @@ nav ul li a:hover {
   /* Aumentamos el tamaño del logo un 40% respecto al anterior (200px -> 280px) */
   width: 280px;
   height: auto;
-  /* Centramos horizontalmente y desplazamos hacia arriba ligeramente usando margen negativo */
-  margin: -1rem auto 1.5rem;
+  /* Centramos horizontalmente y desplazamos más hacia arriba usando un margen negativo mayor
+     para que el logotipo se sitúe en la zona clara del fondo.
+     Ajustamos la separación inferior para mantener la armonía visual. */
+  /* Posicionamos el logotipo aún más arriba para situarlo completamente sobre la zona más clara
+     del fondo de la sección hero. */
+  margin: -10rem auto 2rem;
   display: block;
 }
 
