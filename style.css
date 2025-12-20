@@ -290,3 +290,15 @@ footer {
     margin-left: 0.5rem;
   }
 }
+/* Mejora visual del botón de contacto */
+.contact-form button {
+  width: 100%;
+  background-color: #111;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+  background-color: #000;
+}
