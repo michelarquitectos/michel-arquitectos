@@ -1,79 +1,77 @@
-/*
- * Hoja de estilos principal para Michel Arquitectos.
- * Utiliza tonos neutros y un diseño limpio para resaltar el contenido.
- */
-
-/* Reset básico y sistema de caja */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f7f7f7;
+  color: #222;
+  background-color: #f5f3ef;
 }
 
-/* Navegación y cabecera */
 header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e5e0d8;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 nav {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.9rem 1rem;
 }
 
 nav .logo {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  color: #333;
+  color: #222;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
 }
 
-/* Estilo para el pequeño logotipo en la navegación */
 nav .nav-logo {
-  width: 40px;
+  width: 38px;
   height: auto;
-  margin-right: 0.5rem;
+  margin-right: 0.55rem;
   vertical-align: middle;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-}
-
-nav ul li {
-  margin-left: 1rem;
+  gap: 0.35rem;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
   padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  border-radius: 999px;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 0.95rem;
 }
 
 nav ul li a:hover {
-  background-color: #efefef;
+  background-color: #222;
+  color: #fff;
 }
 
-/* Sección hero */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('assets/images/hero.jpg');
   background-size: cover;
   background-position: center;
@@ -82,16 +80,16 @@ nav ul li a:hover {
   justify-content: center;
   position: relative;
   color: #ffffff;
+  padding: 7rem 1rem 4rem;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.42)),
+    radial-gradient(circle at center, rgba(255,255,255,0.08), rgba(0,0,0,0.4));
   z-index: 0;
 }
 
@@ -100,162 +98,194 @@ nav ul li a:hover {
   z-index: 1;
   text-align: center;
   padding: 0 1rem;
+  max-width: 850px;
+}
+
+.hero-content .logo-hero {
+  width: 260px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
 }
 
 .hero-content h1 {
-  font-size: 2.75rem;
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  line-height: 1.05;
   margin-bottom: 1rem;
+  letter-spacing: -1px;
 }
 
 .hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  max-width: 600px;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  margin-bottom: 1.8rem;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+  color: #f3f3f3;
 }
 
 .btn {
   display: inline-block;
   background-color: #ffffff;
-  color: #333;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  color: #222;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #eaeaea;
+  background-color: #e7dfd3;
+  transform: translateY(-2px);
 }
 
-/* Secciones genéricas */
 .section {
-  padding: 4rem 1rem;
-  max-width: 1100px;
+  padding: 4.5rem 1rem;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
 .section h2 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #333;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.75rem;
+  color: #222;
+  letter-spacing: -0.5px;
 }
 
-/* Servicios */
+.section-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  color: #666;
+  font-size: 1.05rem;
+}
+
 .services-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.2rem;
 }
 
 .service-item {
   background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  text-align: center;
+  padding: 1.7rem;
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
 .service-item h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 0.65rem;
+  color: #222;
 }
 
 .service-item p {
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: #666;
 }
 
-/* Portafolio */
+.portfolio-category {
+  margin-bottom: 3.5rem;
+}
+
+.portfolio-category h3 {
+  font-size: 1.45rem;
+  margin-bottom: 1.1rem;
+  color: #222;
+  border-bottom: 1px solid #d8d0c3;
+  padding-bottom: 0.65rem;
+}
+
 .portfolio-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
 }
 
 .portfolio-gallery img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
   display: block;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  background-color: #ddd;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Botón de descarga del portafolio */
+.portfolio-gallery img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.14);
+}
+
 .portfolio-download {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
 }
+
 .portfolio-download .download-image {
-  width: 320px;
+  width: 340px;
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 .portfolio-download .download-image:hover {
   transform: scale(1.02);
 }
+
 .portfolio-download p {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   font-size: 0.95rem;
   color: #444;
 }
 
-/* Logo en la sección hero */
-/* Ajusta el tamaño y la posición del logotipo en la sección hero.  */
-.hero-content .logo-hero {
-  /* Aumentamos el tamaño del logo un 40% respecto al anterior (200px -> 280px) */
-  width: 280px;
-  height: auto;
-  /* Centramos horizontalmente y desplazamos más hacia arriba usando un margen negativo mayor
-     para que el logotipo se sitúe en la zona clara del fondo.
-     Ajustamos la separación inferior para mantener la armonía visual. */
-  /* Posicionamos el logotipo aún más arriba para situarlo completamente sobre la zona más clara
-     del fondo de la sección hero. */
-  margin: -10rem auto 2rem;
-  display: block;
-}
-
-/* Contacto */
 .contact-form {
   background-color: #ffffff;
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
   margin-bottom: 1.5rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.85rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 12px;
   font-size: 1rem;
   font-family: inherit;
+  background-color: #fafafa;
 }
 
 .contact-form button {
-  background-color: #333;
+  width: 100%;
+  background-color: #222;
   color: #ffffff;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .contact-form button:hover {
-  background-color: #555;
+  background-color: #000;
+  transform: translateY(-2px);
 }
 
 .contact-info {
@@ -268,37 +298,48 @@ nav ul li a:hover {
   margin-bottom: 0.5rem;
 }
 
-/* Pie de página */
+.contact-info a {
+  color: #222;
+}
+
 footer {
-  background-color: #333;
+  background-color: #222;
   color: #ffffff;
   text-align: center;
-  padding: 1rem;
+  padding: 1.2rem;
   margin-top: 2rem;
   font-size: 0.9rem;
 }
 
-/* Adaptación a pantallas pequeñas */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
   }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  nav ul li {
-    margin-left: 0.5rem;
-  }
-}
-/* Mejora visual del botón de contacto */
-.contact-form button {
-  width: 100%;
-  background-color: #111;
-  color: #fff;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-}
 
-.contact-form button:hover {
-  background-color: #000;
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 88vh;
+    padding-top: 4rem;
+  }
+
+  .hero-content .logo-hero {
+    width: 200px;
+  }
+
+  .section {
+    padding: 3.5rem 1rem;
+  }
+
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-gallery img {
+    height: 240px;
+  }
 }
