@@ -344,12 +344,14 @@ footer {
   }
 }
 .instagram-link {
-  display: inline-block;
-  margin-bottom: 1.2rem;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.4rem auto;
   color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  border-bottom: 1px solid #ffffff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-bottom: 2px solid #ffffff;
 }
 
 .instagram-link:hover {
