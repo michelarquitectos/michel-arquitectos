@@ -343,3 +343,15 @@ footer {
     height: 240px;
   }
 }
+.instagram-link {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #ffffff;
+}
+
+.instagram-link:hover {
+  opacity: 0.75;
+}
