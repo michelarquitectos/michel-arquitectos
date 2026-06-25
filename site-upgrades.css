@@ -1,0 +1,46 @@
+/* Mejoras adicionales del sitio */
+.hero-content .logo-hero {
+  transform: translateX(42px);
+}
+
+.portfolio-gallery .gallery-extra {
+  display: none;
+}
+
+.portfolio-category.is-expanded .portfolio-gallery .gallery-extra {
+  display: block;
+}
+
+.gallery-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.25rem auto 0;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid #222;
+  border-radius: 999px;
+  background: #222;
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.gallery-toggle:hover {
+  transform: translateY(-2px);
+  background: #000;
+}
+
+.portfolio-category.is-expanded .gallery-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero-content .logo-hero {
+    transform: translateX(24px);
+  }
+}
