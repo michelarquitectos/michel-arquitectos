@@ -1,6 +1,6 @@
 /* Mejoras adicionales del sitio */
 .hero-content .logo-hero {
-  transform: translateX(42px);
+  transform: translateX(120px);
 }
 
 .portfolio-gallery .gallery-extra {
@@ -41,6 +41,6 @@
 
 @media (max-width: 768px) {
   .hero-content .logo-hero {
-    transform: translateX(24px);
+    transform: translateX(90px);
   }
 }
