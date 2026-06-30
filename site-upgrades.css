@@ -4,7 +4,7 @@
 }
 
 .qr-section {
-  padding: 3.5rem 1.5rem 3rem;
+  padding: 1.25rem 1rem 1rem;
   background: #f7f4ef;
   color: #222;
 }
@@ -16,40 +16,40 @@
 }
 
 .qr-section__eyebrow {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.18rem;
   color: #9b6a43;
-  font-size: 0.78rem;
+  font-size: 0.55rem;
   font-weight: 900;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .qr-section h2 {
   margin: 0;
-  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  font-size: clamp(0.82rem, 2vw, 1.05rem);
 }
 
 .qr-section__intro {
-  margin: 0.65rem auto 1.6rem;
-  max-width: 620px;
+  margin: 0.25rem auto 0.55rem;
+  max-width: 420px;
   color: #666;
-  font-size: 1rem;
+  font-size: 0.68rem;
 }
 
 .qr-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 0.45rem;
 }
 
 .qr-card {
-  width: min(42vw, 190px);
-  min-width: 150px;
-  padding: 1rem;
-  border-radius: 20px;
+  width: 42px;
+  min-width: 42px;
+  padding: 0.18rem;
+  border-radius: 8px;
   background: #fff;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0,0,0,0.06);
 }
 
@@ -57,16 +57,16 @@
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 5px;
   box-shadow: none;
 }
 
 .qr-card span {
   display: block;
-  margin-top: 0.75rem;
-  font-size: 0.95rem;
+  margin-top: 0.2rem;
+  font-size: 0.42rem;
   font-weight: 900;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -386,11 +386,12 @@ body.modal-open {
   }
 
   .qr-section {
-    padding: 2.8rem 1rem 2.4rem;
+    padding: 1rem 0.8rem 0.9rem;
   }
 
   .qr-card {
-    width: min(70vw, 170px);
+    width: 40px;
+    min-width: 40px;
   }
 
   .portfolio-download .download-card .download-image {
