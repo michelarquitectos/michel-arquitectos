@@ -3,6 +3,73 @@
   transform: translate(120px, 38px);
 }
 
+.qr-section {
+  padding: 3.5rem 1.5rem 3rem;
+  background: #f7f4ef;
+  color: #222;
+}
+
+.qr-section__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.qr-section__eyebrow {
+  margin: 0 0 0.45rem;
+  color: #9b6a43;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.qr-section h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+}
+
+.qr-section__intro {
+  margin: 0.65rem auto 1.6rem;
+  max-width: 620px;
+  color: #666;
+  font-size: 1rem;
+}
+
+.qr-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.qr-card {
+  width: min(42vw, 190px);
+  min-width: 150px;
+  padding: 1rem;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.qr-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.qr-card span {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .portfolio-gallery .gallery-extra {
   display: none;
 }
@@ -316,6 +383,14 @@ body.modal-open {
 @media (max-width: 768px) {
   .hero-content .logo-hero {
     transform: translate(90px, 38px);
+  }
+
+  .qr-section {
+    padding: 2.8rem 1rem 2.4rem;
+  }
+
+  .qr-card {
+    width: min(70vw, 170px);
   }
 
   .portfolio-download .download-card .download-image {
