@@ -39,6 +39,21 @@
   display: none;
 }
 
+.library-heading {
+  margin: 4.5rem auto 2rem;
+  text-align: center;
+  max-width: 760px;
+}
+
+.library-heading h2 {
+  margin-bottom: 0.7rem;
+}
+
+.library-heading p {
+  color: #666;
+  font-size: 1.08rem;
+}
+
 .resource-library {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -50,7 +65,7 @@
 .download-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   padding: 0.85rem;
   border-radius: 22px;
   background: #ffffff;
@@ -64,6 +79,12 @@
 .download-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 24px 54px rgba(0, 0, 0, 0.18);
+}
+
+.download-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .portfolio-download .download-card .download-image {
@@ -90,9 +111,29 @@
 
 .download-card small {
   display: block;
-  margin-top: 0.15rem;
+  margin-top: 0.3rem;
   color: #777;
   font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.download-action {
+  margin-top: auto;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: #222;
+  color: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.download-action:hover {
+  transform: translateY(-2px);
+  background: #000;
 }
 
 .download-placeholder {
@@ -110,6 +151,12 @@
   position: relative;
 }
 
+.download-placeholder--materials {
+  background:
+    linear-gradient(135deg, rgba(27, 28, 24, 0.96), rgba(121, 103, 71, 0.84)),
+    radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 38%);
+}
+
 .download-placeholder::before {
   content: '+';
   position: absolute;
@@ -121,7 +168,7 @@
 }
 
 .download-placeholder strong {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -135,6 +182,127 @@
   text-transform: uppercase;
 }
 
+.resource-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.resource-modal.is-open {
+  display: flex;
+}
+
+.resource-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(8px);
+}
+
+.resource-modal__panel {
+  position: relative;
+  width: min(100%, 620px);
+  max-height: 92vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.28);
+}
+
+.resource-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #f0ece5;
+  color: #222;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.resource-modal__eyebrow {
+  color: #9b6a43;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.resource-modal__panel h2 {
+  margin: 0.4rem 0 0.4rem;
+  font-size: clamp(1.65rem, 4vw, 2.3rem);
+}
+
+.resource-modal__intro {
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+
+#resourceDownloadForm {
+  display: grid;
+  gap: 0.85rem;
+}
+
+#resourceDownloadForm label {
+  display: grid;
+  gap: 0.35rem;
+  color: #333;
+  font-weight: 700;
+}
+
+#resourceDownloadForm input,
+#resourceDownloadForm select {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font: inherit;
+  background: #fafafa;
+}
+
+.resource-submit,
+.resource-download-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.4rem;
+  padding: 0.9rem 1.25rem;
+  border: none;
+  border-radius: 999px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.resource-status {
+  min-height: 1.4rem;
+  color: #666;
+  font-size: 0.92rem;
+}
+
+.resource-download-ready {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 16px;
+  background: #f5f3ef;
+  text-align: center;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 @media (max-width: 900px) {
   .resource-library {
     grid-template-columns: 1fr;
@@ -144,5 +312,9 @@
 @media (max-width: 768px) {
   .hero-content .logo-hero {
     transform: translate(90px, 38px);
+  }
+
+  .resource-modal__panel {
+    padding: 1.35rem;
   }
 }
