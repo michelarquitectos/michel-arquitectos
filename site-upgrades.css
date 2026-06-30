@@ -88,12 +88,16 @@
 }
 
 .portfolio-download .download-card .download-image {
-  width: 100%;
-  aspect-ratio: 3 / 2;
+  display: block;
+  width: min(100%, 360px);
+  max-width: 100%;
   height: auto;
-  object-fit: cover;
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin: 0 auto;
   border-radius: 16px;
   box-shadow: none;
+  background: #050505;
 }
 
 .portfolio-download .download-card .download-image:hover {
@@ -312,6 +316,10 @@ body.modal-open {
 @media (max-width: 768px) {
   .hero-content .logo-hero {
     transform: translate(90px, 38px);
+  }
+
+  .portfolio-download .download-card .download-image {
+    width: min(100%, 320px);
   }
 
   .resource-modal__panel {
