@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michel Arquitectos</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="site-upgrades.css?v=4">
+  <link rel="stylesheet" href="site-upgrades.css?v=5">
   <meta name="description" content="Michel Arquitectos es un estudio de arquitectura en Torreón, Coahuila, especializado en proyectos residenciales, comerciales, interiores, renders y construcción.">
   <meta name="keywords" content="arquitectura, diseño arquitectónico, renders, construcción, interiores, Torreón, Michel Arquitectos">
 </head>
@@ -154,30 +154,44 @@
       </div>
     </div>
 
+    <div class="library-heading">
+      <h2>Biblioteca Michel Arquitectos</h2>
+      <p>Recursos profesionales para clientes, arquitectos y colaboradores.</p>
+    </div>
+
     <div class="portfolio-download resource-library">
-      <a href="assets/pdfs/coleccion-de-estilos-2026.pdf" class="download-card" download>
+      <article class="download-card">
         <img src="assets/images/coleccion-de-estilos-2026-cover-web.svg?v=6" alt="Portada de la Colección de estilos 2026" class="download-image download-image--lg">
-        <span>Colección de Estilos 2026</span>
-        <small>Arquitectura + interiorismo</small>
-      </a>
+        <div class="download-card-body">
+          <span>Colección de Estilos 2026</span>
+          <small>Guía visual de estilos arquitectónicos e interiores para inspirar tu próximo proyecto.</small>
+          <button type="button" class="download-action" data-resource="Colección de Estilos 2026" data-download="assets/pdfs/coleccion-de-estilos-2026.pdf">Descargar PDF</button>
+        </div>
+      </article>
 
-      <a href="#contacto" class="download-card download-card--placeholder">
-        <div class="download-placeholder">
-          <strong>Catálogo de Cocinas</strong>
+      <article class="download-card download-card--placeholder">
+        <div class="download-placeholder download-placeholder--kitchens">
+          <strong>Catálogo de Cocinas Premium</strong>
           <em>Próximamente</em>
         </div>
-        <span>Catálogo de Cocinas</span>
-        <small>Archivo pendiente de carga</small>
-      </a>
+        <div class="download-card-body">
+          <span>Catálogo de Cocinas Premium</span>
+          <small>Modelos, estilos y conceptos de cocina para proyectos residenciales de alto valor.</small>
+          <button type="button" class="download-action" data-resource="Catálogo de Cocinas Premium" data-download="assets/pdfs/catalogo-cocinas-premium.pdf">Solicitar descarga</button>
+        </div>
+      </article>
 
-      <a href="#contacto" class="download-card download-card--placeholder">
-        <div class="download-placeholder">
-          <strong>Nuevo Recurso</strong>
+      <article class="download-card download-card--placeholder">
+        <div class="download-placeholder download-placeholder--materials">
+          <strong>Atlas de Materiales y Acabados</strong>
           <em>Próximamente</em>
         </div>
-        <span>Nuevo archivo descargable</span>
-        <small>Archivo pendiente de carga</small>
-      </a>
+        <div class="download-card-body">
+          <span>Atlas de Materiales y Acabados</span>
+          <small>Selección editorial de texturas, acabados y combinaciones para interiores y arquitectura.</small>
+          <button type="button" class="download-action" data-resource="Atlas de Materiales y Acabados" data-download="assets/pdfs/atlas-materiales-acabados.pdf">Solicitar descarga</button>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -200,9 +214,69 @@
     </div>
   </section>
 
+  <div class="resource-modal" id="resourceModal" aria-hidden="true">
+    <div class="resource-modal__backdrop" data-close-modal></div>
+    <div class="resource-modal__panel" role="dialog" aria-modal="true" aria-labelledby="resourceModalTitle">
+      <button type="button" class="resource-modal__close" data-close-modal aria-label="Cerrar formulario">×</button>
+      <p class="resource-modal__eyebrow">Biblioteca Michel Arquitectos</p>
+      <h2 id="resourceModalTitle">Descargar recurso</h2>
+      <p class="resource-modal__intro">Déjanos tus datos para liberar la descarga y saber qué tipo de proyecto estás buscando.</p>
+
+      <form id="resourceDownloadForm" action="https://formspree.io/f/xqezzbze" method="POST">
+        <input type="hidden" name="_subject" value="Nueva descarga desde Biblioteca Michel Arquitectos">
+        <input type="hidden" name="catalogo" id="selectedResource" value="">
+        <input type="hidden" name="archivo_solicitado" id="selectedDownload" value="">
+
+        <label>
+          Nombre
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </label>
+
+        <label>
+          Correo
+          <input type="email" name="email" placeholder="tu@email.com" required>
+        </label>
+
+        <label>
+          WhatsApp
+          <input type="tel" name="whatsapp" placeholder="Tu WhatsApp" required>
+        </label>
+
+        <label>
+          Ciudad
+          <input type="text" name="ciudad" placeholder="Ciudad" required>
+        </label>
+
+        <label>
+          Tipo de proyecto
+          <select name="tipo_de_proyecto" required>
+            <option value="">Selecciona una opción</option>
+            <option>Casa nueva</option>
+            <option>Remodelación</option>
+            <option>Cocina</option>
+            <option>Interiorismo</option>
+            <option>Render / visualización</option>
+            <option>Proyecto comercial</option>
+            <option>Colaboración profesional</option>
+            <option>Otro</option>
+          </select>
+        </label>
+
+        <button type="submit" class="resource-submit">Liberar descarga</button>
+        <p class="resource-status" id="resourceStatus" aria-live="polite"></p>
+      </form>
+
+      <div class="resource-download-ready" id="resourceDownloadReady" hidden>
+        <p>Gracias. Tu descarga está lista.</p>
+        <a href="#" id="resourceDownloadLink" class="resource-download-link" download>Descargar ahora</a>
+      </div>
+    </div>
+  </div>
+
   <footer>
     &copy; 2025 Michel Arquitectos. Todos los derechos reservados.
   </footer>
   <script src="portfolio.js"></script>
+  <script src="resource-gate.js?v=1"></script>
 </body>
 </html>
