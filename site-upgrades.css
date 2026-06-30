@@ -39,6 +39,108 @@
   display: none;
 }
 
+.resource-library {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+  text-align: left;
+}
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.85rem;
+  border-radius: 22px;
+  background: #ffffff;
+  color: #222;
+  text-decoration: none;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.download-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.18);
+}
+
+.portfolio-download .download-card .download-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.portfolio-download .download-card .download-image:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.download-card span {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.download-card small {
+  display: block;
+  margin-top: 0.15rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.download-placeholder {
+  aspect-ratio: 3 / 2;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(23, 20, 18, 0.96), rgba(122, 75, 44, 0.82)),
+    radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 38%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.download-placeholder::before {
+  content: '+';
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 2rem;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+.download-placeholder strong {
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.download-placeholder em {
+  margin-top: 0.35rem;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: #d9b08c;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .resource-library {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content .logo-hero {
     transform: translate(90px, 38px);
