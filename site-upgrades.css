@@ -1,6 +1,6 @@
 /* Mejoras adicionales del sitio */
 .hero-content .logo-hero {
-  transform: none;
+  transform: translateY(-22px);
 }
 
 .qr-section {
@@ -388,7 +388,7 @@ body.modal-open {
 
 @media (max-width: 768px) {
   .hero-content .logo-hero {
-    transform: none;
+    transform: translateY(-16px);
   }
 
   .qr-section {
