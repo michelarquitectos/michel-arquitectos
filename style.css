@@ -163,6 +163,22 @@ nav ul li a:hover {
   font-size: 1.05rem;
 }
 
+.portfolio-library-jump {
+  display: block;
+  width: fit-content;
+  margin: -1.8rem auto 2.6rem;
+  color: #9b6a45;
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.portfolio-library-jump:hover {
+  color: #6f4a32;
+  opacity: 0.85;
+}
+
 .services-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
