@@ -179,6 +179,43 @@ nav ul li a:hover {
   opacity: 0.85;
 }
 
+.services-download-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin: -0.1rem auto 2.4rem;
+  text-align: center;
+}
+
+.services-catalog-link {
+  color: #9b6a45;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(155, 106, 69, 0.45);
+  transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.services-library-link {
+  color: #777;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.services-catalog-link:hover,
+.services-library-link:hover {
+  color: #6f4a32;
+  opacity: 0.85;
+}
+
+.services-catalog-link:hover {
+  border-color: rgba(111, 74, 50, 0.75);
+}
+
 .services-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
